@@ -1,0 +1,352 @@
+/* ===================================================
+   1. RESET & DASAR
+   =================================================== */
+:root {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 35px -8px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ===================================================
+   2. NAVBAR
+   =================================================== */
+header {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* ===================================================
+   3. HERO / TENTANG SAYA
+   =================================================== */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 56px;
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-height: 440px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    display: block;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+}
+
+.hero-description {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+
+/* Jenjang Pendidikan */
+.education h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    color: var(--text-primary);
+}
+
+.edu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.arrow-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--accent);
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.edu-box {
+    flex-grow: 1;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
+}
+
+.edu-item:hover .arrow-icon {
+    transform: rotate(45deg);
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+.edu-item:hover .edu-box {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+}
+
+/* ===================================================
+   4. DOKUMENTASI LOMBA
+   =================================================== */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.section-header.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.section-text {
+    flex: 1;
+}
+
+.section-text h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.section-text p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.section-grid {
+    flex: 1.4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.section-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-grid img:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===================================================
+   5. PORTOFOLIO (SERTIFIKAT)
+   =================================================== */
+#portofolio h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+.portfolio-item {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-item h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 20px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+/* ===================================================
+   6. FOOTER
+   =================================================== */
+.footer-section {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.footer-box {
+    background-color: var(--text-primary);
+    color: #ffffff;
+    padding: 40px 24px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.footer-box h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* ===================================================
+   7. RESPONSIVE DESIGN (TABLET & MOBILE)
+   =================================================== */
+@media (max-width: 900px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .hero-image img {
+        max-height: 380px;
+    }
+
+    .section-header,
+    .section-header.row-reverse {
+        flex-direction: column;
+        gap: 28px;
+        text-align: center;
+    }
+
+    .section-grid {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .section-text h2,
+    #portofolio h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-grid img {
+        height: 180px;
+    }
+}
